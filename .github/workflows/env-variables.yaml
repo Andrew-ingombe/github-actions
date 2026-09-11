@@ -15,7 +15,21 @@ jobs:
       - name: Greettings
         run: echo "Hello, ${{ env.CHANNEL_NAME }}!"
 
-      - name: Ger comments on ${{ env.CHANNEL_NAME }}
+      - name: Get comments on ${{ env.CHANNEL_NAME }}
+        run: |
+          #HTTPS /api/comments
+          echo "Awesome!!"
+          echo "Great content!!"
+          echo "Thank you for sharing!!"
+
+  job2:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Greettings
+        run: echo "Hello, ${{ env.CHANNEL_NAME }}! from job2"
+
+      - name: Get comments on ${{ env.CHANNEL_NAME }}
         run: |
           #HTTPS /api/comments
           echo "Awesome!!"
