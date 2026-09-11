@@ -12,6 +12,8 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           name: build-artifact
+          github-token: ${{github.token}}
+          repository: ${{github.repository}}
           path: artifact
           run-id: 34645826752
 
