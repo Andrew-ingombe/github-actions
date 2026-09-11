@@ -38,6 +38,7 @@ jobs:
 
   deploy-react:
     runs-on: ubuntu-latest
+    if: ${{ always() }}
     needs: [build-react, second-job]
 
     steps:
