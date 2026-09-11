@@ -17,7 +17,7 @@ jobs:
       - name: Greettings
         env:
           CHANNEL_NAME: InterviewPro
-        run: echo "Hello, $env.CHANNEL_NAME!"
+        run: echo "Hello, $CHANNEL_NAME!"
 
       - name: Get comments on ${{ env.CHANNEL_NAME }}
         run: |
@@ -39,3 +39,9 @@ jobs:
           echo "Awesome!!"
           echo "Great content!!"
           echo "Thank you for sharing!!"
+
+      - name: Set env variables programmatically
+        run: echo "COUNT=10000" >> $GITHUB_ENV
+
+      - name: Access env variables
+        run: echo $COUNT
