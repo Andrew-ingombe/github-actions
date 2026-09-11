@@ -55,3 +55,9 @@ jobs:
         run: |
           echo ${{ env.COUNT }}
           echo ${{ env.CHANNEL_NAME }}
+
+      - name: Access reposoitory variables
+        run: echo "${{vars.USERNAME}}"
+
+      - name: Access reposoitory secret
+        run: echo "${{secrets.PASSWORD}}"
