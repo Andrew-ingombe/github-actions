@@ -1,9 +1,9 @@
 name: Build React App
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
-  workflow_run:
 
 jobs:
   build-react:
