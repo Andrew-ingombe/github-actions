@@ -38,9 +38,15 @@ jobs:
 
   deploy-react:
     runs-on: ubuntu-latest
-    if: ${{ always() }}
+    # if: ${{ always() }}
     needs: [build-react, second-job]
 
     steps:
-      - name: Test
-        run: echo 'test step'
+      - name: Download artifact
+        uses: actions/download-artifact@v8
+        with:
+          name: build-artifact
+          path: artifact
+
+      - name: Displat structure of downloaded files
+        run: ls -R artifact
