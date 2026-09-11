@@ -15,6 +15,7 @@ jobs:
           github_token: ${{github.token}}
           repo: ${{github.repository}}
           path: artifact
+          workflow: build-react.yaml
           run_number: 28
 
       - name: Disploy structure of downloaded files
