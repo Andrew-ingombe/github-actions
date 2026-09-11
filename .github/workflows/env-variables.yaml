@@ -17,7 +17,7 @@ jobs:
       - name: Greettings
         env:
           CHANNEL_NAME: InterviewPro
-        run: echo "Hello, ${{ env.CHANNEL_NAME }}!"
+        run: echo "Hello, $env.CHANNEL_NAME!"
 
       - name: Get comments on ${{ env.CHANNEL_NAME }}
         run: |
