@@ -1,0 +1,23 @@
+name: Environment variables
+
+on:
+  push:
+    branches: [main]
+
+env:
+  CHANNEL_NAME: InterviewPro
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Greettings
+        run: echo "Hello, ${{ env.CHANNEL_NAME }}!"
+
+      - name: Ger comments on ${{ env.CHANNEL_NAME }}
+        run: |
+          #HTTPS /api/comments
+          echo "Awesome!!"
+          echo "Great content!!"
+          echo "Thank you for sharing!!"
