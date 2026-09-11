@@ -6,7 +6,6 @@ on:
 jobs:
   deploy-react:
     runs-on: ubuntu-latest
-    needs: [build-react, second-job]
 
     steps:
       - name: Download artifact
@@ -16,5 +15,5 @@ jobs:
           path: artifact
           run-id: 34645826752
 
-      - name: Displat structure of downloaded files
+      - name: Disploy structure of downloaded files
         run: ls -R artifact
