@@ -14,7 +14,6 @@ jobs:
         with:
           name: build-artifact
           path: artifact
-          run-id:
 
       - name: Displat structure of downloaded files
         run: ls -R artifact
