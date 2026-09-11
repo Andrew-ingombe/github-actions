@@ -8,14 +8,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v8
+      - name: Download workflow artifact
+        uses: dawidd6/action-download-artifact@v24
         with:
           name: build-artifact
-          github-token: ${{github.token}}
-          repository: ${{github.repository}}
+          github_token: ${{github.token}}
+          repo: ${{github.repository}}
           path: artifact
-          run-id: 34645826752
+          run_number: 28
 
       - name: Disploy structure of downloaded files
         run: ls -R artifact
+
+      #   - name: Download artifact
+      #     uses: actions/download-artifact@v8
+      #     with:
+      #       name: build-artifact
+      #       github-token: ${{github.token}}
+      #       repository: ${{github.repository}}
+      #       path: artifact
+      #       run-id: 34645826752
+
+      # - name: Disploy structure of downloaded files
+      #   run: ls -R artifact
