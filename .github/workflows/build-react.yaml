@@ -3,6 +3,7 @@ name: Build React App
 on:
   push:
     branches: [main]
+  workflow_run:
 
 jobs:
   build-react:
@@ -36,17 +37,17 @@ jobs:
       - name: Test
         run: echo "test second step"
 
-  deploy-react:
-    runs-on: ubuntu-latest
-    # if: ${{ always() }}
-    needs: [build-react, second-job]
+  # deploy-react:
+  #   runs-on: ubuntu-latest
+  #   if: ${{ always() }}
+  #   needs: [build-react, second-job]
 
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v8
-        with:
-          name: build-artifact
-          path: artifact
+  #   steps:
+  #     - name: Download artifact
+  #       uses: actions/download-artifact@v8
+  #       with:
+  #         name: build-artifact
+  #         path: artifact
 
-      - name: Displat structure of downloaded files
-        run: ls -R artifact
+  #     - name: Displat structure of downloaded files
+  #       run: ls -R artifact
