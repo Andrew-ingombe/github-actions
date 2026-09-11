@@ -10,11 +10,13 @@ on:
 jobs:
   demo:
     runs-on: ubuntu-latest
-    env:
-      CHANNEL_NAME: InterviewPro
+    # env:
+    #   CHANNEL_NAME: InterviewPro
 
     steps:
       - name: Greettings
+        env:
+          CHANNEL_NAME: InterviewPro
         run: echo "Hello, ${{ env.CHANNEL_NAME }}!"
 
       - name: Get comments on ${{ env.CHANNEL_NAME }}
